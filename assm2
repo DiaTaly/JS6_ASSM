@@ -1,0 +1,90 @@
+//1.1 Approve vacation only in July or August
+
+// let month = "June"
+// if (month == "July" || month == "August") {
+//     console.log("approved")
+// } 
+// else { console.log("denied")}
+
+//1.2 Calculator to perform arithmetic calculations and 
+//catch exceptions
+
+// let num1 = 2, num2 = 0;
+// let operator = "/";
+// let calcInput = num1 + operator + num2 + "=";
+// console.log("This simple arithmetic calculator is able to add, subtract, multiply, \
+// and divide" + "\n")
+// if (typeof num1 != "number"){
+//     console.log("Data type is not valid")
+// }
+// else if(operator != "+" && operator != "-" 
+//         && operator != "/" && operator != "*"
+//         ){
+//     console.log("Operator is not valid for this calculator")
+// }
+// else
+// if (operator == "+"){
+//     console.log(calcInput + (num1 + num2));
+// }
+// else if(operator == "-" ){
+//     console.log(calcInput + (num1 - num2))
+// }
+// else if(operator == "*"){
+//     console.log(calcInput + (num1 * num2))
+// }
+// else if(operator == "/")
+// {
+//     if(num2 == 0){
+//         console.log("Division by zero is not allowed")
+//     }
+//    else {    
+//         console.log(calcInput + (num1 / num2))  
+//     }
+// }
+
+//1.3 Улитка ползёт вверх по стене высотой 5 метров. Каждый день она проползает 
+//вверх на 3 метра, а каждую ночь съезжает вниз на 2 метра. За сколько дней она 
+//доползёт до вершины стены.
+// let day = 3
+// let night = -2
+// let total = 5
+// let days
+// //(3 - 2)*x == 5; x = 5 / (3-2); x = 5
+// days = total / (day + night)
+// console.log(days)
+
+// HOW TO GET USER INPUT IN JAVASCRIPT
+// function myFunction(a){
+//     return console.log(a)
+// }
+// let a =  prompt("Please enter a number: ")
+// myFunction(a);
+// console.log("Hello")
+
+//
+//latte is about two thirds steamed milk and one third espresso coffee.
+//Cappuccino is about one third coffee, one third steamed milk, and one third milk foam.
+
+
+//From Tatyana: Напишите программу для расчета стоимости билетов. 
+// Для пассажиров старше 18 лет- полная цена, для младенцев младше 2 лет - 10% стоимости, 
+// для детей от 2-х до 18ти лет - 50 % стоимости, 
+// для пенсионеров старше 65 лет - 60% стоимости
+////let priceOver18, priceUnder2, price2to18, priceOver65;
+// function ticketPrice(fullPrice, age){
+//     if (typeof fullPrice != Number || typeof age != Number){
+//         console.log("Only number values are accepted");
+//     }
+//     else {
+//     if (age < 2){actualPrice = .1 * fullPrice}
+//     else if (age < 19 ){actualPrice = .5 * fullPrice}
+//     else if (age >= 66){actualPrice = .6 * fullPrice}
+//     else {actualPrice = fullPrice}
+    
+//     console.log(`For age ${age} the ticket price is $${actualPrice}`)
+//     }
+// }
+// ticketPrice(10, 50);
+// //ticketPrice(10, "2 years");
+
+
