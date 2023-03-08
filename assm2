@@ -61,11 +61,6 @@
 // myFunction(a);
 // console.log("Hello")
 
-//
-//latte is about two thirds steamed milk and one third espresso coffee.
-//Cappuccino is about one third coffee, one third steamed milk, and one third milk foam.
-
-
 //From Tatyana: Напишите программу для расчета стоимости билетов. 
 // Для пассажиров старше 18 лет- полная цена, для младенцев младше 2 лет - 10% стоимости, 
 // для детей от 2-х до 18ти лет - 50 % стоимости, 
@@ -86,5 +81,9 @@
 // }
 // ticketPrice(10, 50);
 // //ticketPrice(10, "2 years");
+
+//  MAKING A COFFEE WITH A RECIPE
+//latte is about two thirds steamed milk and one third espresso coffee.
+//Cappuccino is about one third coffee, one third steamed milk, and one third milk foam.
 
 
