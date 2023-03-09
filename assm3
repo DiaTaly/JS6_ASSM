@@ -1,0 +1,141 @@
+// //1. Напишите программу калькулятора со switch, обработайте возможные ошибки ввода 
+// let num1 = 2, num2 = 0;
+// let operator = "/";
+// let calcInput = num1 + operator + num2 + "=";
+
+// console.log("This simple arithmetic calculator is able to add, subtract, multiply, \
+// and divide" + "\n")
+
+// // if (typeof num1 != "number" || typeof num2 != "number"){
+// //     console.log("Data type is not valid");
+// //     //break;
+// // }
+// // else {
+// switch (operator){
+//     case "+":
+//         console.log(calcInput + (num1 + num2));
+//         break;
+//     case "-":
+//         console.log(calcInput + (num1 - num2));
+//         break;
+//     case "*":
+//         console.log(calcInput + (num1 * num2));
+//         break;
+//     case "/":
+//         if(num2 == 0){
+//             console.log("Division by zero is not allowed");
+//             break;
+//         }
+//         else {    
+//             console.log(calcInput + (num1 / num2))  
+//             break;
+//         }
+//     default: console.log("Operator is not valid for this calculator")
+// }  //switch
+
+//////////////////////////////////////////////////////////////
+//3. При помощи цикла for выведите чётные числа от 2 до 10
+// for (i=2;  i <= 10; i+=2) {
+//     console.log(i);
+// }
+
+
+//4. Задача с интервью
+// У вас есть массив со скобками, предположим 
+// [ ‘(‘, ‘)’, ‘(‘, ‘)’, ‘)’] . Количество элементов и последовательность может быть разной.
+// Нужно выяснить, у каждой ли скобки есть соответствующая пара (открывающая и закрывающая).
+
+// let arr = ['(', ')', '(', ')', ')' ];  //  '(', ')', '(', ')', ')'
+// let len = arr.length;
+// let sumLeftParenthesis;
+// let sumRightParenthesis;
+
+// for (i=0; i < len; i++){
+//     if (arr[i] == "(") sumLeftParenthesis++;
+//     else if (arr[i] == ")") sumRightParenthesis;
+// }
+// if (sumLeftParenthesis != sumRightParenthesis)   
+// console.log("Not all parentheses have a pair") 
+
+//2. Попробуйте внедрить в свою программу с кофе вложенный if
+// Flowchart:
+// Welcome message
+// You have selected a "size" cup of "cofee type"
+// The total is "price"
+// Recipe
+// Thank you for your patronage! Pease come again.
+
+let coffeeDrink = 'Latte';
+let size = 'large';
+
+let price = 0;
+let priceSmallAmericano = 3, priceSmallLatte = 5, priceSmallCappucino = 4, priceSmallMocha = 5;
+let priceLargeMultiplier = 1.5;
+
+let recipe = `     The recipe is coming soon!`;
+let recipeHeader = `     Feel free to try a home recipe for this drink: \n\n`
+let recipeAmericano, recipeLatte, recipeCappucino, recipeMocha;
+let recipeStepNum = 1;
+
+let waterSmallAmericano = 6;      // oz
+let espressoSmallAmericano = 2;  //1 scoop = 1 oz
+let waterAmericano, espressoAmericano;
+
+let waterSmallLatte = .5 // cup originally 2/3
+let waterLatte;
+let milkAmt = .25;  //cup  originally 1/3
+let coffeeAmt = .75; //tsp
+let sugar = '1';  //tsp
+
+switch(coffeeDrink){
+ case "Americano": 
+    if (size == 'small') {
+        price = priceSmallAmericano;
+        waterAmericano = waterSmallAmericano;
+        espressoAmericano = espressoSmallAmericano;
+    }
+    else if (size == 'large') {    //checking for large size is optional but included for clarity
+        price = priceLargeMultiplier * priceSmallAmericano;
+        waterAmericano = 2 * waterSmallAmericano;
+        espressoAmericano = 2 * espressoSmallAmericano;
+    }
+    recipeAmericano = `    ${recipeStepNum++}. Pour ${waterAmericano} oz of near boiling water into a cup.
+    ${recipeStepNum++}. Slowly pour ${espressoAmericano} oz of finely ground espresso beans into water.
+    ${recipeStepNum++}. Mix ingredients well.
+    ${recipeStepNum}. Sit back and enjoy!
+    ` 
+    recipe = recipeHeader + recipeAmericano;
+    break;
+case "Latte":
+    if (size == 'small') {
+        price = priceSmallLatte;
+        waterLatte = waterSmallLatte;
+        }
+    else if (size == 'large') {    //checking for large size is optional but included for clarity
+        price = priceLargeMultiplier * priceSmallLatte;
+        waterLatte = 2 * waterSmallLatte;
+        coffeeAmt = 2 * coffeeAmt;
+    }    
+    recipeLatte = `    ${recipeStepNum++}. Put ${coffeeAmt} tsp of instant coffee into a ${size} cup.
+    ${recipeStepNum++} Pour in ${waterLatte} cup of water.
+    ${recipeStepNum++}. Mix the ingredients in the cup.
+    ${recipeStepNum++}. Whip ${milkAmt} cup of milk separately.
+    ${recipeStepNum++}. Pour whipped milk on top of the mixed coffee. 
+    ${recipeStepNum}. Sit back and enjoy!
+`
+    recipe = recipeHeader + recipeLatte;
+    break;
+}
+//-------OUTPUT-------
+console.log('     Welcome to our QAFE!');
+
+if (coffeeDrink == "no drink") 
+    console.log('     You have not selected a drink.  Please try again.  \n')
+else {
+    console.log(`     You have selected a ${size} ${coffeeDrink}`);
+    console.log(`     The total price for your drink is $${price}.`);
+    console.log(recipe);
+    console.log(`Enjoy your ${coffeeDrink} responsibly! `)
+}
+
+console.log(`Thank you for your patronage. Please come again!`)
