@@ -87,55 +87,96 @@ let milkAmt = .25;  //cup  originally 1/3
 let coffeeAmt = .75; //tsp
 let sugar = '1';  //tsp
 
-switch(coffeeDrink){
- case "Americano": 
-    if (size == 'small') {
-        price = priceSmallAmericano;
-        waterAmericano = waterSmallAmericano;
-        espressoAmericano = espressoSmallAmericano;
-    }
-    else if (size == 'large') {    //checking for large size is optional but included for clarity
-        price = priceLargeMultiplier * priceSmallAmericano;
-        waterAmericano = 2 * waterSmallAmericano;
-        espressoAmericano = 2 * espressoSmallAmericano;
-    }
-    recipeAmericano = `    ${recipeStepNum++}. Pour ${waterAmericano} oz of near boiling water into a cup.
-    ${recipeStepNum++}. Slowly pour ${espressoAmericano} oz of finely ground espresso beans into water.
-    ${recipeStepNum++}. Mix ingredients well.
-    ${recipeStepNum}. Sit back and enjoy!
-    ` 
-    recipe = recipeHeader + recipeAmericano;
-    break;
-case "Latte":
-    if (size == 'small') {
-        price = priceSmallLatte;
-        waterLatte = waterSmallLatte;
-        }
-    else if (size == 'large') {    //checking for large size is optional but included for clarity
-        price = priceLargeMultiplier * priceSmallLatte;
-        waterLatte = 2 * waterSmallLatte;
-        coffeeAmt = 2 * coffeeAmt;
-    }    
-    recipeLatte = `    ${recipeStepNum++}. Put ${coffeeAmt} tsp of instant coffee into a ${size} cup.
-    ${recipeStepNum++} Pour in ${waterLatte} cup of water.
-    ${recipeStepNum++}. Mix the ingredients in the cup.
-    ${recipeStepNum++}. Whip ${milkAmt} cup of milk separately.
-    ${recipeStepNum++}. Pour whipped milk on top of the mixed coffee. 
-    ${recipeStepNum}. Sit back and enjoy!
-`
-    recipe = recipeHeader + recipeLatte;
-    break;
-}
-//-------OUTPUT-------
-console.log('     Welcome to our QAFE!');
+// switch(coffeeDrink){
+//  case "Americano": 
+//     if (size == 'small') {
+//         price = priceSmallAmericano.toFixed(2);
+//         waterAmericano = waterSmallAmericano;
+//         espressoAmericano = espressoSmallAmericano;
+//     }
+//     else if (size == 'large') {    //checking for large size is optional but included for clarity
+//         price = (priceLargeMultiplier * priceSmallAmericano).toFixed(2);
+//         waterAmericano = 2 * waterSmallAmericano;
+//         espressoAmericano = 2 * espressoSmallAmericano;
+//     }
+//     recipeAmericano = `    ${recipeStepNum++}. Pour ${waterAmericano} oz of near boiling water into a cup.
+//     ${recipeStepNum++}. Slowly pour ${espressoAmericano} oz of finely ground espresso beans into water.
+//     ${recipeStepNum++}. Mix ingredients well.
+//     ${recipeStepNum}. Sit back and enjoy!
+//     ` 
+//     recipe = recipeHeader + recipeAmericano;
+//     break;
+// case "Latte":
+//     if (size == 'small') {
+//         price = priceSmallLatte.toFixed(2);
+//         waterLatte = waterSmallLatte;
+//         }
+//     else if (size == 'large') {    //checking for large size is optional but included for clarity
+//         price = (priceLargeMultiplier * priceSmallLatte).toFixed(2);
+//         waterLatte = 2 * waterSmallLatte;
+//         coffeeAmt = 2 * coffeeAmt;
+//     }    
+//     recipeLatte = `    ${recipeStepNum++}. Put ${coffeeAmt} tsp of instant coffee into a ${size} cup.
+//     ${recipeStepNum++} Pour in ${waterLatte} cup of water.
+//     ${recipeStepNum++}. Mix the ingredients in the cup.
+//     ${recipeStepNum++}. Whip ${milkAmt} cup of milk separately.
+//     ${recipeStepNum++}. Pour whipped milk on top of the mixed coffee. 
+//     ${recipeStepNum}. Sit back and enjoy!
+// `
+//     recipe = recipeHeader + recipeLatte;
+//     break;
+// }
+// //-------OUTPUT-------
+// console.log('    Welcome to our QAFE!');
 
-if (coffeeDrink == "no drink") 
-    console.log('     You have not selected a drink.  Please try again.  \n')
-else {
-    console.log(`     You have selected a ${size} ${coffeeDrink}`);
-    console.log(`     The total price for your drink is $${price}.`);
-    console.log(recipe);
-    console.log(`Enjoy your ${coffeeDrink} responsibly! `)
-}
+// if (coffeeDrink == "no drink") 
+//     console.log('    You have not selected a drink.  Please try again.  \n')
+// else {
+//     console.log(`    You have selected a ${size} ${coffeeDrink}`);
+//     console.log(`    The total price for your drink is $${price}.`);
+//     console.log(recipe);
+//     console.log(`Enjoy your ${coffeeDrink} responsibly! `)
+// }
 
-console.log(`Thank you for your patronage. Please come again!`)
+// console.log(`Thank you for your patronage. Please come again!`)
+
+/*Креативное задание*(не показываем решение до понедельника):
+Имеется зашифрованное предложение 
+“Ybrobrubr brabrrbrebr brtbrhbrebr brbbrebrsbrtbr brQbrAbr brebrvbrebrrbr”
+мы знаем, что оно означает “You are the best QA ever”.
+Нам нужно придумать программу дешифратор.
+*/
+//DECODER: read every 3rd letter
+// let inputString = "Ybrobrubr brabrrbrebr brtbrhbrebr brbbrebrsbrtbr brQbrAbr brebrvbrebrrbr";
+// let decodedStr = '';
+// let len = inputString.length;
+
+// for (let i = 0; i < len; i+=3){
+//     decodedStr += inputString[i];
+// }
+// console.log(decodedStr);
+//====ALTERNATIVE - WORK IN PROGRESS
+// let inputString = "Ybrobrubr brabrrbrebr brtbrhbrebr brbbrebrsbrtbr brQbrAbr brebrvbrebrrbr";
+// let decodedStr = '';
+// let len = inputString.length;
+
+// for (let i =  0; i < len; i++){
+//     if (inputString[i] != "b" ) { //&& inputString[i+1] != "r") {
+//         decodedStr += inputString[i];
+//     } 
+    // else
+    // if (inputString[i] == "b" ){
+    //     if (inputString[i+1] != "r"){
+    //         decodedStr += inputString[i];
+    //     } 
+    // } else
+    // if (inputString[i] = "r" && inputString[i-1] != "b"){
+    //     decodedStr += inputString[i];
+    // }
+    // if ((inputString[i] != "b" && inputString[i+1] != "r") &&
+    // (inputString[i] != "r" && inputString[i-1] != "b") ){
+    //     decodedStr += inputString[i];
+    // }
+// }
+// console.log(decodedStr);
+//====END ALTERNATIVE 
