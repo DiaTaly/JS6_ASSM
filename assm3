@@ -183,3 +183,33 @@ let sugar = '1';  //tsp
 // }
 // console.log(decodedStr);
 //====END ALTERNATIVE 
+
+/* Oт Татьяны: Нарисовать елочку и ромб  с помощью циклов  */
+let len = 5;
+// let tree = '';
+// for (i= 1; i <= len; i++){
+//     tree = ''
+//     for(j=i; j < len; j++){
+//         tree += " ";
+//     }
+//     for(k=1; k< i*2; k++){
+//         tree += "*"
+//     }
+//     console.log(tree);
+// }
+// /*
+// i=1, j=1,2,3,4, tree = "    ", k=0, tree = "    *"
+// i=2, j=2,3,4, tree = "   ", k=0,1,2,3, tree = "   ***"
+// i=3, j=
+// */
+
+// for (i=len; i>=1; i--){
+//     tree = '';
+//     for (j=i; j<=len; j--){
+//         tree += ''
+//     }
+//     for (k=i*2-1; k>=1; k--){
+//         tree += "*";
+//     }
+//     console.log(tree)
+// }
